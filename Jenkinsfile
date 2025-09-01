@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from the repository
-                git 'https://github.com/your-repo/simple-python-app.git'
+                git 'https://github.com/Eb1n-Babu/Jenkins-demo-v2.git'
             }
         }
 
