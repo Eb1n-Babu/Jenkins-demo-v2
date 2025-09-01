@@ -18,7 +18,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run tests using pytest
-                bat 'venv\\Scripts\\activate && venv\\Scripts\\pytest.exe tests/test_app.py'
+                bat 'venv\\Scripts\\activate && venv\\Scripts\\pytest.exe test_app.py'
             }
         }
     }
