@@ -1,23 +1,25 @@
+```groovy
 pipeline {
     agent any
     stages {
         stage('Checkout') {
             steps {
-                // Explicitly checkout the 'main' branch
+                // Checkout the 'main' branch explicitly
                 git branch: 'main', url: 'https://github.com/Eb1n-Babu/Jenkins-demo-v2.git'
             }
         }
         stage('Build') {
             steps {
-                // Set up a Python virtual environment (Windows-compatible)
-                bat 'python -m venv venv'
-                bat 'venv\\Scripts\\activate && pip install pytest'
+                // Use full path to python executable (adjust path as needed)
+                bat '"C:\\Users\\ebinb\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m venv venv'
+
+                bat 'venv\\Scripts\\activate && venv\\Scripts\\pip.exe install pytest'
             }
         }
         stage('Test') {
             steps {
-                // Run tests using pytest (Windows-compatible)
-                bat 'venv\\Scripts\\activate && pytest tests/test_app.py'
+                // Run tests using pytest
+                bat 'venv\\Scripts\\activate && venv\\Scripts\\pytest.exe tests/test_app.py'
             }
         }
     }
@@ -30,3 +32,4 @@ pipeline {
         }
     }
 }
+```
